@@ -1,0 +1,162 @@
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container,
+.output-table {
+  width: 100%;
+  max-width: 600px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  color: #666666;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: #3a86ff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(58, 134, 255, 0.2);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #3a86ff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.output-table h3 {
+  color: #3a86ff;
+  margin-bottom: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+table th,
+table td {
+  padding: 12px 8px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #3a86ff;
+  color: white;
+  font-weight: 600;
+}
+
+table tfoot td {
+  font-weight: bold;
+  color: #333;
+}
+
+tfoot td {
+  border-top: 2px solid #ddd;
+}
+
+tfoot td#totalTagihan {
+  color: #3a86ff;
+}
+
+p {
+  color: #333333;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    width: 100%;
+  }
+
+  table {
+    border: none;
+  }
+
+  table tr {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+
+  table th,
+  table td {
+    text-align: left;
+    padding: 10px 8px;
+  }
+
+  table th::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: inline-block;
+    width: 100px;
+    color: #666666;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: inline-block;
+    width: 100px;
+    color: #666666;
+  }
+}

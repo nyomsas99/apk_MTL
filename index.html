@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program Bayar Tagihan Listrik</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Aplikasi Bayar Tagihan Token Listrik</h2>
+
+      <label for="nama_peralatan">Nama Peralatan (pisahkan dengan koma):</label>
+      <input
+        type="text"
+        id="nama_peralatan"
+        placeholder="Contoh: Lampu,TV,Kulkas"
+      />
+
+      <label for="jumlah_peralatan">QTY (pisahkan dengan koma):</label>
+      <input type="text" id="jumlah_peralatan" placeholder="Contoh: 12,1,2" />
+
+      <label for="kapasitas">Kapasitas (watt, pisahkan dengan koma):</label>
+      <input type="text" id="kapasitas" placeholder="Contoh: 20,100,150" />
+
+      <label for="lama_pemakaian"
+        >Lama Pemakaian (jam, pisahkan dengan koma):</label
+      >
+      <input type="text" id="lama_pemakaian" placeholder="Contoh: 5,3,24" />
+
+      <label for="golongan">Golongan (pilih salah satu):</label>
+      <select id="golongan">
+        <option value="1352">900 VA (Rp. 1352)</option>
+        <option value="1444">1300 VA (Rp. 1444)</option>
+        <option value="1444">2200 VA (Rp. 1444)</option>
+        <option value="1699">3500 VA (Rp. 1699)</option>
+        <option value="1699">6600 VA (Rp. 1699)</option>
+      </select>
+
+      <button onclick="hitungTotalTagihan()">Hitung Total Tagihan</button>
+    </div>
+
+    <div id="output" class="output-table" style="display: none">
+      <h3>Detail Tagihan</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th data-label="Nama Peralatan">Nama Peralatan</th>
+            <th data-label="QTY">QTY</th>
+            <th data-label="Lama Pemakaian (jam)">Lama Pemakaian (jam)</th>
+            <th data-label="Kapasitas (watt)">Kapasitas (watt)</th>
+            <th data-label="Golongan Token">Golongan Token</th>
+            <th data-label="Biaya">Biaya</th>
+          </tr>
+        </thead>
+        <tbody id="outputBody"></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="6">Total Tagihan</td>
+            <td id="totalTagihan"></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <p><b>Terbilang:</b> <span id="totalTerbilang"></span></p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
